@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+
+
+
+<div class="login_form_wrapper">
+
+    <div class="image-container"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <!-- login_wrapper -->
+                <form class="login_wrapper" (ngSubmit)="f.form.valid && SignUp()" #f="ngForm" nonvalidate>
+                    <div class="logo d-flex justify-content-center">
+                        <img src="../../assets/logo.png" alt="" height="80" width="80">
+                      </div>
+                      <div class="text-center mt-4 name phunga">
+                          PhungaCafe
+                      </div>
+                    
+                    <div class="formsix-pos" >
+                        <div class="form-group i-email">
+                            
+                            <input type="username" class="form-control" required id="username" placeholder="username"
+                            name="username" [(ngModel)]="form.username" required #username="ngModel" 
+                            required [ngClass]="{'is-invalid': f.submitted && username.errors}" minlength="4">
+
+                            <div *ngIf="username.invalid && (username.dirty || username.touched)"
+    class="alert">
+
+  <div *ngIf="username.errors?.['required']" class="alert alert-danger px-4">
+    Username is required.
+  </div>
+  <div *ngIf="username.errors?.['minlength']" class="alert alert-danger px-4">
+    Name must be at least 4 characters long.
+  </div>
+
+                        </div> 
+                    </div> 
+                    <div class="formsix-e">
+                        <div class="form-group i-password">
+                            <input type="email" class="form-control" required id="email" placeholder="email"
+                            name="email" [(ngModel)]="form.email" required #email="ngModel" 
+                            required minlength="4">
+
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                            class="alert">
+                        
+                          <div *ngIf="email.errors?.['required']" class="alert alert-danger px-4">
+                            Email is required.
+                          </div>
+                          <div *ngIf="email.errors?.['minlength']" class="alert alert-danger px-4">
+                            Email must be at least 4 characters long.
+                          </div>
+                        </div>
+                    </div>
+                    <div class="formsix-e">
+                        <div class="form-group i-password">
+                            <input type="password" class="form-control" required id="password" placeholder="password"
+                            name="password" [(ngModel)]="form.password" required #password="ngModel" minlength="4" 
+                             >
+                             <div *ngIf="password.invalid && (password.dirty || password.touched)"
+    class="alert">
+
+  <div *ngIf="password.errors?.['required']" class="alert alert-danger px-4">
+    Password is required.
+  </div>
+  <div *ngIf="password.errors?.['minlength']" class="alert alert-danger px-4">
+    Password must be at least 4 characters long.
+  </div>
+                        </div>
+                    </div>
+                    <div class="login_password"></div>
+                       
+                        
+                    
+                    <div class="login_btn_wrapper">
+                        <button  class="btn btn-dark login_btn text-center" (click)="SignUp()" [disabled]="username.invalid || password.invalid || email.invalid"> SIGN UP </button>
+                        <div class="alert alert-danger p-3" *ngIf="isSignUpFailed">
+                            <span>Signup Failed!</span>
+                        </div>
+                        <div class="alert alert-success p-3" *ngIf="isSuccessful">
+                            <span>Signed up is successfully!</span>
+                        </div>
+                    </div>
+                    
+               
+               
+                <!-- /.login_wrapper-->
+            </div>
+        
+    

@@ -1,0 +1,130 @@
+<!-- Navigation-->
+<app-navbar></app-navbar>
+
+<!-- Header-->
+<div class=" jumboo">
+<div id="slider">
+  <div class="slides">
+    <div class="slider">
+      <div class="legend"></div>
+      <div class="content">
+        <div class="content-txt">
+          <h1 class="wordss">Coffee Cafe</h1>
+          
+        </div>
+      </div>
+      <div class="image">
+        <img
+          src="https://stories.starbucks.com/uploads/2023/02/20230221-Starbucks-Oleato-Reserve-Lineup-with-Partanna.jpg" class="img-fluid1" alt="Responsive image"
+        />
+      </div>
+    </div>
+    <div class="slider">
+      <div class="legend"></div>
+      <div class="content">
+        <div class="content-txt">
+          <h1 class="wordss">Specials on Cakes</h1>
+          
+        </div>
+      </div>
+      <div class="image">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBy8RqJBjkvIVMR1zJLFwcEXKzMDttLHjsvg&usqp=CAU" class="img-fluid1" alt="Responsive image"
+        />
+      </div>
+    </div>
+    <div class="slider">
+      <div class="legend"></div>
+      <div class="content">
+        <div class="content-txt">
+          <h1 class="wordss">Coffee Specials</h1>
+          
+        </div>
+      </div>
+      <div class="image">
+
+        <img
+          src="https://media.istockphoto.com/id/1208794199/photo/the-original-stabucks-coffee-for-their-customer-at-the-starbucks-reserve-roastery-in-shanghai.webp?b=1&s=170667a&w=0&k=20&c=4USZCgXBu_MByKmsJcFXrDpd3kF78Fl_ZbsAxBt7ll0=" class="img-fluid1" alt="Responsive image"
+        />
+      </div>
+    </div>
+    <div class="slider">
+      <div class="legend"></div>
+      <div class="content">
+        <div class="content-txt">
+          <h1 class="wordss">Combo Deals</h1>
+          
+        </div>
+      </div>
+      <div class="image">
+        <img
+          src="https://stories.starbucks.com/uploads/2023/02/20230221-Starbucks-Oleato-Beverage-Lineup-1024x683.jpg" class="img-fluid1" alt="Responsive image"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="switch">
+    <ul>
+      <li>
+        <div class="on"></div>
+      </li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+
+<!-- Section-->
+<section class="py-5">
+  <h1 class="heading">OUR MENU</h1>
+  <div class="container px-4 px-lg-5 mt-5">
+
+    <div class="loader" *ngIf= "!products">
+      <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    </div>
+    
+    <div class="row gx-4 gx-lg-5 row-cols-4 row-cols-md-3 row-cols-xl-6 justify-content-start">
+        <div class="col-6 col-sm-2" *ngFor = "let item of products">
+          <div class="card">
+          <!-- Product image-->
+          <a routerLink="/view/{{item.id}}">
+            <img
+            class="card-img-top imagefit" height="62px"
+            src={{item.picture}}
+            alt="..."
+          /></a>
+          <div class="card-body p-2">
+            <div class="subCardBody">
+              <!-- Product name-->
+              <h6 class="fw-bolder">{{item.itemname}}</h6>
+              <!-- Product price-->
+              <p>R{{item.price}}</p>
+
+                <svg type="button" (click)="addToCart(item)"  class="icon" xmlns="http://www.w3.org/2000/svg" width="22.5" height="20" viewBox="0 0 576 512"><path fill="black" d="M0 24C0 10.7 10.7 0 24 0h45.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5l-51.6-271c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zm128 440a48 48 0 1 1 96 0a48 48 0 1 1-96 0zm336-48a48 48 0 1 1 0 96a48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20v-44h44c11 0 20-9 20-20s-9-20-20-20h-44V96c0-11-9-20-20-20s-20 9-20 20v44h-44c-11 0-20 9-20 20z"/></svg>
+
+
+
+            </div>
+
+
+          </div>
+          </div>
+        </div>
+        <ng-template *ngIf="!products">
+          <div>
+            <p>You are selected</p>
+          </div>
+        </ng-template>
+
+
+    </div>
+  </div>
+</section>

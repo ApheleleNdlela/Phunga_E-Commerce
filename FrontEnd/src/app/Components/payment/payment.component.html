@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<div class="bg-dark">
+    <div class="container py-4">
+      <!-- Breadcrumb -->
+      <nav class="d-flex">
+        <h6 class="mb-0">
+            <a routerLink="/menu" class="text-white-50">1. Home</a>
+            <span class="text-white-50 mx-2"> > </span>
+            <a routerLink="/Cart" class="text-white-50"><u>2. Cart</u></a>
+            <span class="text-white-50 mx-2"> > </span>
+            <a routerLink="/Checkout" class="text-white-50">3. Order info</a>
+            <span class="text-white-50 mx-2"> > </span>
+            <a routerLink = "/Payment" class="text-white">4. Payment</a>
+        </h6>
+      </nav>
+      <!-- Breadcrumb -->
+    </div>
+  </div>
+<div class="container p-0">
+    
+    <div class="card px-4">
+        <svg  routerLink="/Checkout"   class="Goditems1" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48"><mask id="ipSBack0"><path fill="#fff" fill-rule="evenodd" stroke="#fff" stroke-linejoin="round" stroke-width="4" d="M44 40.836c-4.893-5.973-9.238-9.362-13.036-10.168c-3.797-.805-7.412-.927-10.846-.365V41L4 23.545L20.118 7v10.167c6.349.05 11.746 2.328 16.192 6.833c4.445 4.505 7.009 10.117 7.69 16.836Z" clip-rule="evenodd"/></mask><path fill="black" d="M0 0h48v48H0z" mask="url(#ipSBack0)"/></svg>
+        <p class="h8 py-3 ">Payment Details</p>
+        
+        <div class="row gx-3">
+            <div class="col-12">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Card Holder</p>
+                    <input class="form-control mb-3" type="text" placeholder="Name" value="">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Card Number</p>
+                    <input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">Expiry</p>
+                    <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="d-flex flex-column">
+                    <p class="text mb-1">CVV/CVC</p>
+                    <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="btn btn-primary mb-3">
+                    <span class="ps-3">R{{cartTotal | async}}</span>
+                    
+                </div>
+            </div>
+            <button type="button" class="btn btn-success btn-lg btn-block button1" routerLink="/menu">Pay</button>
+           
+    
+            <button type="button" class="btn btn-success btn-lg btn-block button1 CancelButton" routerLink="/menu">Cancel</button>
+        </div>
+      
+    </div>
+    
+</div>

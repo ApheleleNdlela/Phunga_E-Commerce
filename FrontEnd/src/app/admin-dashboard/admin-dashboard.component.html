@@ -1,0 +1,78 @@
+
+<!-- Header-->
+
+    
+    <!-- Section-->
+    <section class="py-5">
+        <svg  routerLink="/menu"   class="Goditems1" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 48 48"><mask id="ipSBack0"><path fill="#fff" fill-rule="evenodd" stroke="#fff" stroke-linejoin="round" stroke-width="4" d="M44 40.836c-4.893-5.973-9.238-9.362-13.036-10.168c-3.797-.805-7.412-.927-10.846-.365V41L4 23.545L20.118 7v10.167c6.349.05 11.746 2.328 16.192 6.833c4.445 4.505 7.009 10.117 7.69 16.836Z" clip-rule="evenodd"/></mask><path fill="black" d="M0 0h48v48H0z" mask="url(#ipSBack0)"/></svg>
+      <h1 class="heading">ADMIN MENU</h1>
+      <div class="container px-4 px-lg-5 mt-5 text-center">
+
+        <button type="button" class="btn btn-success btn-lg btn-block buttonGod"  (click)="selectAdd()">ADD ITEM</button> 
+    
+        <div class="row gx-4 gx-lg-5 row-cols-4 row-cols-md-3 row-cols-xl-6 justify-content-start">
+            <div class="col-6 col-sm-2" *ngFor = "let item of products">
+              <div class="card">
+              <!-- Product image-->
+              
+                <img
+                class="card-img-top imagefit" height="62px"
+                src={{item.picture}}
+                alt="..."
+              />
+              <div class="card-body p-2">
+                <div class="subCardBody">
+                  <!-- Product name-->
+                  <h6 class="fw-bolder">{{item.itemname}}</h6>
+                  <!-- Product price-->
+                  <p>R{{item.price}}</p>
+    
+                    
+                    <svg  (click)="product = item" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m5 16l-1 4l4-1L19.586 7.414a2 2 0 0 0 0-2.828l-.172-.172a2 2 0 0 0-2.828 0L5 16ZM15 6l3 3m-5 11h8"/></svg>
+    
+                    <svg  class="iconGod"  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" (click)="delete(item.id)"><path fill="red" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12Z"/></svg>
+                    
+                
+                </div>
+
+    
+    
+              </div>
+              <!-- Product details-->
+    
+              <!-- Product actions-->
+              </div>
+            </div>
+    
+    
+            
+        </div>
+      </div>
+
+      <div *ngIf="product">
+        <h1 class="heading text-center">EDIT ITEM</h1>
+        <div class="intro" >
+            <app-admin-update-item [product]="product"></app-admin-update-item>
+        </div>
+        <!-- <form (ngSubmit)="updateItem(itemToUpdate)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" [(ngModel)]="item.itemname" name="name" required>
+          
+      
+          <button type="submit">Update</button>
+        </form> -->
+      </div>
+
+      <div class="add-product text-center" *ngIf="selected">
+        <h1 class="heading">ADD ITEM</h1>
+        <input class="form__input"  type="text" placeholder="Add Image" [(ngModel)]="newItem.picture">
+        <input class="form__input"  type="text" placeholder="Add Price" [(ngModel)]="newItem.price">
+        <input class="form__input"  type="text" placeholder="Add Category" [(ngModel)]="newItem.category">
+        <input class="form__input"  type="text" placeholder="Add Name" [(ngModel)]="newItem.itemname">
+        <input class="form__input"  type="text" placeholder="Description" [(ngModel)]="newItem.details">
+        <button type="button" class="btn btn-dark btn-lg btn-block"  (click)="add()">Add</button>
+      </div>
+    </section>
+
+    
+    

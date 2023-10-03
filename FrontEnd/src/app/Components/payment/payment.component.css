@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: lightblue;
+
+    padding: 30px 10px;
+}
+
+.card {
+    max-width: 500px;
+    margin: auto;
+    /* color: black; */
+    border-radius: 20 px;
+}
+
+p {
+    margin: 0px;
+}
+
+.container .h8 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.btn.btn-primary {
+    color: black;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background-image: linear-gradient(to right, #fff8f8 0%, #d8d8d8 51%, #cacaca 100%);
+    border: none;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border: #878787 solid;
+    border-width: 1px;
+
+}
+
+
+.btn.btn.btn-primary:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.btn.btn-primary:hover .fas.fa-arrow-right {
+    transform: translate(15px);
+    transition: transform 0.2s ease-in;
+}
+
+.form-control {
+    color: white;
+    background-color: #f7f2f2;
+    border: 2px solid #878787;
+    height: 60px;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.form-control:focus {
+    color: white;
+    background-color: #7ba4bc;
+    border: 2px solid #0a1547;
+    box-shadow: none;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+}
+.button1{
+    height: 54px
+}
+.CancelButton{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.Goditems1{
+    position: absolute;
+    top: 20px;
+}
+

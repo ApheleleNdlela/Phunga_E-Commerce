@@ -1,0 +1,13 @@
+<p>user-dboard works!</p>
+<div *ngIf = 'isLoggedIn'>
+    <p>{{userProfile.username}}</p>
+    <p>{{userProfile.role}}</p>
+    <p>{{userProfile.email}}</p>
+    <p>{{userProfile.password}}</p>
+    
+</div>
+
+<h3>My Order</h3>
+<div *ngFor="let item of myCart">
+    <p>{{item.price}}</p><p>{{item.itemname}}</p>
+</div>
